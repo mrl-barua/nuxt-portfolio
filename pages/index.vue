@@ -1,39 +1,44 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-const fullNames = ["MARLO BARUA", "WEB DEVELOPER", "SOFTWARE DEVELOPER"];
+const fullNames = ["MARLO BARUA", "A WEB DEVELOPER", "A SOFTWARE DEVELOPER"];
 const animatedName = ref("");
-let currentWordIndex = 0; // Index for the current word in the fullNames array
-let currentLetterIndex = 0; // Index for the current letter in the current word
+let currentWordIndex = 0;
+let currentLetterIndex = 0;
+let timeoutId = null; // For managing timeouts
+
+const updateAnimatedName = (action) => {
+  if (action === "add") {
+    animatedName.value += fullNames[currentWordIndex][currentLetterIndex++];
+    timeoutId = setTimeout(() => updateName(), 150);
+  } else {
+    animatedName.value = animatedName.value.slice(0, -1);
+    timeoutId = setTimeout(() => updateName(), 200);
+  }
+};
+
+const updateName = () => {
+  if (currentLetterIndex < fullNames[currentWordIndex].length) {
+    updateAnimatedName("add");
+  } else if (animatedName.value.length > 0) {
+    updateAnimatedName("remove");
+  } else {
+    moveToNextWord();
+  }
+};
+
+const moveToNextWord = () => {
+  currentWordIndex = (currentWordIndex + 1) % fullNames.length;
+  currentLetterIndex = 0;
+  timeoutId = setTimeout(() => updateName(), 200);
+};
 
 onMounted(() => {
-  function showLetterByLetter() {
-    if (currentLetterIndex < fullNames[currentWordIndex].length) {
-      animatedName.value += fullNames[currentWordIndex][currentLetterIndex];
-      currentLetterIndex++;
-      setTimeout(showLetterByLetter, 150);
-    } else {
-      // Wait a bit before starting to remove letters
-      setTimeout(removeLetterByLetter, 150);
-    }
-  }
+  updateName();
+});
 
-  function removeLetterByLetter() {
-    if (animatedName.value.length > 0) {
-      animatedName.value = animatedName.value.substring(
-        0,
-        animatedName.value.length - 1
-      );
-      setTimeout(removeLetterByLetter, 200);
-    } else {
-      // Move to the next word or loop back to the first word
-      currentWordIndex = (currentWordIndex + 1) % fullNames.length;
-      currentLetterIndex = 0; // Reset letter index for the new word
-      setTimeout(showLetterByLetter, 200); // Start showing the next word
-    }
-  }
-
-  showLetterByLetter();
+onUnmounted(() => {
+  clearTimeout(timeoutId); // Clear the timeout when the component is unmounted
 });
 </script>
 <template>
@@ -65,7 +70,7 @@ onMounted(() => {
 
 [class*="col-"] {
   float: left;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .row::after {
@@ -79,10 +84,6 @@ h2 {
 
 p {
   margin: 10px 0;
-}
-
-.container {
-  height: 100vh;
 }
 
 .centered-content {

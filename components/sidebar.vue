@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 // import { PhHouseSimple } from "phosphor-icons";
 export default {
   setup() {
-    const isSidebarActive = ref(false);
+    const isSidebarActive = ref(true);
     const activeMenu = ref(null);
     const router = useRouter();
 
@@ -65,7 +65,6 @@ export default {
       </div>
       <div class="nav">
         <div class="menu">
-          <p class="title">Main</p>
           <ul>
             <li>
               <nuxt-link to="/" class="routerlink"
@@ -75,16 +74,37 @@ export default {
             </li>
 
             <li>
-              <nuxt-link to="/hero" class="routerlink">
+              <nuxt-link to="/techstack" class="routerlink">
                 <i class="icon ph-bold ph-calendar-blank"></i
                 ><span class="text">About</span></nuxt-link
               >
             </li>
 
             <li>
+              <nuxt-link to="/techstack" class="routerlink">
+                <i class="icon ph-bold ph-calendar-blank"></i
+                ><span class="text">Tech Stack</span></nuxt-link
+              >
+            </li>
+
+            <li>
+              <nuxt-link to="/techstack" class="routerlink">
+                <i class="icon ph-bold ph-calendar-blank"></i
+                ><span class="text">Projects</span></nuxt-link
+              >
+            </li>
+
+            <li>
               <a href="#"
                 ><i class="icon ph-bold ph-file-text"></i
-                ><span class="text">Articles</span></a
+                ><span class="text">Blogs</span></a
+              >
+            </li>
+
+            <li>
+              <a href="#"
+                ><i class="icon ph-bold ph-file-text"></i
+                ><span class="text">Contact </span></a
               >
             </li>
           </ul>
