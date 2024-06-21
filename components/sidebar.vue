@@ -89,35 +89,6 @@ export default {
             </li>
           </ul>
         </div>
-        <div class="menu">
-          <p class="title">Settings</p>
-          <ul>
-            <li>
-              <a href="#"
-                ><i class="icon ph-bold ph-gear"></i
-                ><span class="text">Settings</span></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu">
-        <p class="title">Account</p>
-        <ul>
-          <li>
-            <a href="#"
-              ><i class="icon ph-bold ph-info"></i
-              ><span class="text">FAQ</span></a
-            >
-          </li>
-
-          <li>
-            <a href="#" class="routerlink" @click.prevent="confirmLogout">
-              <i class="icon ph-bold ph-sign-out"></i>
-              <span class="text">Logout</span>
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
@@ -146,7 +117,7 @@ export default {
   position: fixed; /* or 'absolute' */
   top: 0;
   left: 0;
-  width: 256px;
+  width: 216px;
   height: 100vh;
   display: flex;
   flex-direction: column;

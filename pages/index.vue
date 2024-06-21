@@ -1,8 +1,7 @@
 <script setup></script>
 
 <template>
-  <sidebar />
-  <div>
+  <div class="container">
     <h2>Home</h2>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, porro a
@@ -15,6 +14,7 @@
       pariatur ipsa ea deserunt soluta laboriosam inventore tempora!
     </p>
   </div>
+  <sidebar />
 </template>
 
 <style scoped>
