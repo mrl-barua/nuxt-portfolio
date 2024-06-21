@@ -1,6 +1,7 @@
 <script setup></script>
 
 <template>
+  <sidebar />
   <div>
     <h2>Home</h2>
     <p>
