@@ -1,6 +1,7 @@
 <script setup></script>
 
 <template>
+  <sidebar />
   <div>
     <h2>Hero</h2>
     <p>

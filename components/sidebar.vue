@@ -68,16 +68,16 @@ export default {
           <p class="title">Main</p>
           <ul>
             <li>
-              <router-link to="/home" class="routerlink"
+              <nuxt-link to="/" class="routerlink"
                 ><i class="icon ph-bold ph-house-simple"></i
-                ><span class="text">Dashboard</span></router-link
+                ><span class="text">Dashboard</span></nuxt-link
               >
             </li>
 
             <li>
-              <router-link to="/about" class="routerlink">
+              <nuxt-link to="/hero" class="routerlink">
                 <i class="icon ph-bold ph-calendar-blank"></i
-                ><span class="text">About</span></router-link
+                ><span class="text">About</span></nuxt-link
               >
             </li>
 
