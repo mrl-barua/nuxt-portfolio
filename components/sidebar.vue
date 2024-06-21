@@ -75,35 +75,35 @@ export default {
 
             <li>
               <nuxt-link to="/about" class="routerlink">
-                <i class="icon ph-bold ph-calendar-blank"></i
-                ><span class="text">About</span></nuxt-link
-              >
+                <i class="ph ph-brackets-square"></i>
+                <span class="text">About</span>
+              </nuxt-link>
             </li>
 
             <li>
               <nuxt-link to="/techstack" class="routerlink">
-                <i class="icon ph-bold ph-calendar-blank"></i
+                <i class="ph ph-stack"></i
                 ><span class="text">Tech Stack</span></nuxt-link
               >
             </li>
 
             <li>
               <nuxt-link to="/projects" class="routerlink">
-                <i class="icon ph-bold ph-calendar-blank"></i
+                <i class="ph ph-kanban"></i
                 ><span class="text">Projects</span></nuxt-link
               >
             </li>
 
             <li>
               <nuxt-link to="/blogs" class="routerlink">
-                <i class="icon ph-bold ph-file-text"></i
+                <i class="ph ph-article"></i
                 ><span class="text">Blogs</span></nuxt-link
               >
             </li>
 
             <li>
               <nuxt-link to="/contact" class="routerlink">
-                <i class="icon ph-bold ph-file-text"></i
+                <i class="ph ph-paper-plane-tilt"></i
                 ><span class="text">Contact </span>
               </nuxt-link>
             </li>
