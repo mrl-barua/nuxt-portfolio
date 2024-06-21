@@ -3,7 +3,7 @@
   <section class="col-1"><sidebar /></section>
   <section class="col-11 content">
     <div class="container-fluid">
-      <div class="centered-content"><h2>Tech Stack</h2></div>
+      <div class="centered-content"><h2>About</h2></div>
     </div>
   </section>
 </template>
